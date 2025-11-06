@@ -1,8 +1,16 @@
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import TodoList from './pages/todo-list'
+import Login from './pages/login'
+
 function App() {
   return (
-    <>
-      <h1>Hello World!</h1>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<TodoList />} />
+        <Route path="/entrar" element={<Login />} />
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
