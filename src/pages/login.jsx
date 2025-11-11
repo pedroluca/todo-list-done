@@ -1,20 +1,20 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { User } from 'lucide-react';
-import Button from '../components/button';
-import Input from '../components/input';
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { User } from 'lucide-react'
+import Button from '../components/button'
+import Input from '../components/input'
 
 export default function Login() {
-  const [nome, setNome] = useState('');
-  const navigate = useNavigate();
+  const [nome, setNome] = useState('')
+  const navigate = useNavigate()
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault()
     if (nome.trim()) {
-      localStorage.setItem('usuario', nome.trim());
-      navigate('/');
+      localStorage.setItem('usuario', nome.trim())
+      navigate('/')
     }
-  };
+  }
 
   return (
     <div className="login-container">
@@ -36,5 +36,5 @@ export default function Login() {
         </form>
       </div>
     </div>
-  );
+  )
 }
